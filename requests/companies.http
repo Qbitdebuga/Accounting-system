@@ -1,0 +1,15 @@
+### Create company
+POST http://localhost:3000/api/companies
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "Dev Test Corp",
+  "default_currency": "USD",
+  "timezone": "America/New_York",
+  "is_active": true
+}
+
+### List companies
+GET http://localhost:3000/api/companies
+Authorization: Bearer {{token}}

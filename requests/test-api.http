@@ -1,0 +1,16 @@
+### Get all companies
+GET http://localhost:3000/api/companies
+Accept: application/json
+
+###
+
+### Create a new company
+POST http://localhost:3000/api/companies
+Content-Type: application/json
+
+{
+  "name": "Beta Corp",
+  "default_currency": "EUR",
+  "timezone": "Europe/Berlin",
+  "is_active": true
+}

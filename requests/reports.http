@@ -1,0 +1,9 @@
+### 📊 Trial Balance (all time)
+GET http://localhost:3000/api/reports/trial-balance
+Authorization: Bearer {{token}}
+
+###
+
+### 📊 Trial Balance (with date filter)
+GET http://localhost:3000/api/reports/trial-balance?from=2025-04-01&to=2025-04-30
+Authorization: Bearer {{token}}

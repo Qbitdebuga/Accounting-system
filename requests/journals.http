@@ -1,0 +1,27 @@
+### Post journal entry
+POST http://localhost:3000/api/journals
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "transaction_date": "2025-04-18",
+  "posting_date": "2025-04-18",
+  "description": "Seed Capital",
+  "is_adjusting_entry": false,
+  "lines": [
+    {
+      "account_id": 1,
+      "debit": 10000,
+      "credit": 0
+    },
+    {
+      "account_id": 2,
+      "debit": 0,
+      "credit": 10000
+    }
+  ]
+}
+
+### Get all journals
+GET http://localhost:3000/api/journals
+Authorization: Bearer {{token}}
