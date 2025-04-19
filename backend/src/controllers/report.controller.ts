@@ -1,10 +1,10 @@
 import { Response } from 'express';
 import { CustomRequest } from '../types/CustomRequest';
 import { ReportService } from '../services/report.service';
+import { getUserFromRequest } from '../utils/getUserFromRequest';
 
 export const getTrialBalance = async (req: CustomRequest, res: Response) => {
-  const company_id = req.user?.company_id;
-
+  const { company_id } = getUserFromRequest(req);
   const { from, to } = req.query;
 
   if (!company_id) {

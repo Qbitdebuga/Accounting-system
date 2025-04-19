@@ -18,3 +18,4 @@ yarn-error.log*
 # Sequelize CLI files (if using SQLite or temp files)
 *.sqlite
 *.sqlite3
+

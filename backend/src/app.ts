@@ -11,6 +11,8 @@ import { JournalEntry } from './models/journal_entry';
 import { JournalLine } from './models/journal_line';
 import journalRoutes from './routes/journal.routes';
 import reportRoutes from './routes/report.routes';
+import voucherRoutes from './routes/voucher.routes';
+
 
 dotenv.config();
 
@@ -22,6 +24,7 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/journals', journalRoutes);
 app.use('/api/reports', reportRoutes);
+app.use('/api/vouchers', voucherRoutes);
 
 // Health check
 app.get('/', (req: Request, res: Response) => {
@@ -36,7 +39,7 @@ sequelize
   .authenticate()
   .then(() => {
     console.log('✅ Connected to database');
-    return sequelize.sync(); // or sync({ alter: true })
+    return sequelize.sync({ alter: true }); // or sync({ alter: true })
   })
   .then(() => {
     console.log('✅ Models synchronized');
@@ -48,4 +51,3 @@ sequelize
 app.listen(PORT, () => {
   console.log(`🚀 Server is running at http://localhost:${PORT}`);
 });
-
